@@ -31,20 +31,14 @@ do{
     int arreglo[contador];
     int i = 0;
 
-    while (a > 0) {
-        arreglo[i] = a % 2;
-        a = a / 2;
-        i++;
-    }
+    
 
     cout << "el numero en binario es: \t ";
     for (int j = contador - 1; j >= 0; j--) {
         cout << arreglo[j];
     }
 
-    cout << "\n";
-        break;
-        }
+    
 
     case 2:{
     int n;
