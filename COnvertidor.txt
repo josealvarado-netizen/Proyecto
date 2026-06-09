@@ -1,0 +1,77 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int op = 0;
+do{
+    cout << "ingresa la opcion que deses realizar \n";
+    cout << "1 para convertir a binario\n";
+    cout << "2 para convertir a decimal\n";
+
+    cout << "ingresa tu opcion \t";
+    cin >> op;
+
+
+    switch(op){
+        case 1:{
+        int a, b;
+    int contador = 0;
+
+    cout << "Ingresa un numero decimal: ";
+    cin >> a;
+
+    b = a;
+
+    while (b > 0) {
+        b= b / 2;
+        contador++;
+    }
+
+    int arreglo[contador];
+    int i = 0;
+
+    while (a > 0) {
+        arreglo[i] = a % 2;
+        a = a / 2;
+        i++;
+    }
+
+    cout << "el numero en binario es: \t ";
+    for (int j = contador - 1; j >= 0; j--) {
+        cout << arreglo[j];
+    }
+
+    cout << "\n";
+        break;
+        }
+
+    case 2:{
+    int n;
+    int decimal = 0;
+
+    cout << "ingresa la cantidad de bits que tiene el numero: ";
+    cin >> n;
+
+    int arreglob[n];
+
+    cout << "coloca los bist uno por uno  y preciona enter al terminar:\n";
+    for (int i = 0; i < n; i++) {
+        cin >> arreglob[i];
+    }
+
+    int potencia = 1;
+
+    for (int i = n - 1; i >= 0; i--) {
+        decimal += arreglob[i] * potencia;
+        potencia *= 2;
+    }
+
+    cout << "En decimal es: " << decimal << "\n";
+        break;
+        }
+    }
+}while(op != -1);
+
+    return 0;
+}
